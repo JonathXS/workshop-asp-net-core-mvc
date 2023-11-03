@@ -2,7 +2,7 @@
 {
     public enum SaleStatus : int
     {
-        Panding = 0,
+        Pending = 0,
         Billed = 1,
         Canceled = 2,
 
