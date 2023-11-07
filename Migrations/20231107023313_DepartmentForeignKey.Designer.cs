@@ -11,8 +11,8 @@ using SalesWebMvc.Models;
 namespace SalesWebMvc.Migrations
 {
     [DbContext(typeof(SalesWebMvcContext))]
-    [Migration("20231106200815_Update-Entities")]
-    partial class UpdateEntities
+    [Migration("20231107023313_DepartmentForeignKey")]
+    partial class DepartmentForeignKey
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

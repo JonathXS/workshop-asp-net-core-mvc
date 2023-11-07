@@ -10,7 +10,7 @@ namespace SalesWebMvc.Models
         public ICollection<Seller> Sellers { get; set; }
 
         public Department() 
-        {
+        { 
             Sellers = new HashSet<Seller>();
         }
         public Department(int id, string name)
