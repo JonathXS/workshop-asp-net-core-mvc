@@ -36,7 +36,7 @@ namespace SalesWebMvc.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Delete(int? id) 
+        public IActionResult Delete(int? id)
         { 
             if (id == null)
             {
@@ -51,12 +51,28 @@ namespace SalesWebMvc.Controllers
             return View(obj);
         }
 
-        [ValidateAntiForgeryToken]
+        
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Delete(int id)
         {
             _sellerservice.Remove(id);
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _sellerservice.FindByID(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
         }
     }
 }
